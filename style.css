@@ -1,0 +1,140 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-container.left{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    background-color: blue;
+    
+}
+
+.inner-container.right{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    flex: 2;
+    background-color: red;
+}
+
+.message-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+}
+
+p{
+    margin-left: 4%;
+    font-size: 22px;
+    max-width: 70%;
+}
+
+.message-container > p{
+    font-weight: bold;
+}
+
+.form-container{
+    display: flex;
+    flex: 0.9;
+    justify-content: flex-start;
+    outline: solid;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 100%;
+    gap: 6%;
+    margin-left: 4%
+}
+
+legend{
+    margin-top: 2%;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.upper-form, .mid-form, .lower-form{
+    display: flex;
+    border-style: none;
+    gap: 10%;
+}
+
+.lower-form{
+    margin-bottom: 4%;
+}
+
+.form-left, .form-right{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+input{
+    border-radius: 6px;
+    padding: 2px;
+    width: fit-content;
+}
+
+.submit-container{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+button[type="submit"]{
+    margin: 4%;
+    font-size: 14px;
+    width: 160px;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+@media (orientation: portrait){
+    body{
+        flex-direction: column;
+    }
+    form{
+        align-items: center;
+    }
+    .upper-form, .mid-form, .lower-form{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .form-left, .form-right, legend{
+        align-items: center;
+    }
+    div[class$="container"]{
+        justify-content: center;
+        align-items: center;
+    }
+    button[type="submit"]{
+        margin-left: 0;
+    }
+    p{
+        font-size: 18px;
+        max-width: 50%;
+    }
+    .message-container > p{
+        margin-bottom: 4%;
+    }
+}
