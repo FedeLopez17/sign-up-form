@@ -3,7 +3,8 @@
     margin:0;
     box-sizing: border-box;
     font-family: sans-serif;
-    --green: #596D48;
+    --color: #fd5123;
+    color: white;
 }
 
 @font-face{
@@ -12,7 +13,7 @@
 }
 
 a:link, a:visited{
-    color: var(--green);
+    color: var(--color);
     text-decoration: none;
     font-weight: 900;
 }
@@ -31,6 +32,12 @@ body{
     height: 100%;
     width: 100%;
     flex: 1;
+}
+
+@media (max-aspect-ratio: 4/3){
+    .inner-container.left{
+        flex: 1.5;
+    }
 }
 
 .inner-container.left > img{
@@ -62,6 +69,9 @@ body{
 .inner-container.right{
     display: flex;
     flex-direction: column;
+    background: rgb(37,37,37);
+    background: linear-gradient(90deg, rgba(37,37,37,1) 0%, rgba(0,116,129,1) 100%);
+    /* Background made with https://cssgradient.io/*/
     height: 100%;
     width: 100%;
     flex: 2;
@@ -88,7 +98,10 @@ p{
     display: flex;
     flex: 0.9;
     justify-content: flex-start;
-    box-shadow: 0 5px 18px #808080; /* grey */
+    box-shadow: 0 -2px 90px #fd5123;
+    border-top-style: double;
+    border-bottom-style: double;
+    border-width: 10px;
 }
 
 form{
@@ -135,6 +148,7 @@ label{
 input{
     border-style: solid;
     border-color: #E5E7EB;
+    color: black;
     border-radius: 6px;
     padding: 2px;
     padding-top: 6px;
@@ -176,16 +190,25 @@ button[type="submit"]{
     border-radius: 6px;
     font-weight: 900;
     color: white;
-    background-color: var(--green);
+    background-color: var(--color);
 }
 
 button[type="submit"][disabled]{
     background-color: grey;
 }
 
+button[type="submit"]:hover{
+    transform: scale(1.05);
+    background-color: white;
+    color: #fd5123;
+}
+
 @media (orientation: portrait){
     body{
         flex-direction: column;
+    }
+    .inner-container.right{
+        height: fit-content;
     }
     form{
         align-items: center;
@@ -218,7 +241,7 @@ button[type="submit"][disabled]{
         margin-bottom: 4%;
     }
     .inner-container.left > div.logo-container{
-        margin-top: 76%;
+        margin-top: 102%;
     }
     label{
         margin-top: 15%;
